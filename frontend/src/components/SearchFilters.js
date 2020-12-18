@@ -5,7 +5,7 @@ class SearchFilters extends Component {
         products: [
             { id: 0, value: "Jacket", isChecked: false },
             { id: 1, value: "Trousers", isChecked: false },
-            { id: 2, value: "T-shirts", isChecked: false },
+            { id: 2, value: "T-Shirts", isChecked: false },
             { id: 3, value: "Blazer", isChecked: false },
             { id: 4, value: "Sweater", isChecked: false },
             { id: 5, value: "Short", isChecked: false },
@@ -13,7 +13,13 @@ class SearchFilters extends Component {
             { id: 7, value: "Raincoat", isChecked: false },
             { id: 8, value: "Jeans", isChecked: false },
             { id: 9, value: "Dress", isChecked: false },
-        ] 
+        ],
+        badges: {
+            products: [],
+            quantity: '',
+            cost: '',
+            leadTime: ''
+        }
     }
 
     onProductChange = (e, id) => {
@@ -23,8 +29,15 @@ class SearchFilters extends Component {
             value: e.target.value,
             isChecked: e.target.checked
         };
-        console.log(products);
-        this.setState({products});
+        let badges = {...this.state.badges};
+        if(e.target.checked)
+            badges.products.push(e.target.value);
+        else {
+            let ind = badges.products.indexOf(e.target.value);
+            if(ind>-1)
+                badges.products.splice(ind, 1);
+        }
+        this.setState({products, badges});
     }
 
     render() { 
@@ -104,7 +117,7 @@ class SearchFilters extends Component {
                             </div>
                         </div>
                         <div className="mx-2">
-                            <button className="rounded-pill px-3 py-1" style={{border: "2px solid rgb(18, 77, 81)", backgroundColor: 'white' }}>Apply Filters</button>
+                            <button onClick={() => this.props.applyFilters(this.state.badges)} className="rounded-pill px-3 py-1" style={{border: "2px solid rgb(18, 77, 81)", backgroundColor: 'white' }}>Apply Filters</button>
                         </div>
                     </div>
                 </div>

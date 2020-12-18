@@ -10,7 +10,8 @@ class SearchButtons extends Component {
     state = { 
         products: [],
         filteredProducts: [],
-        searchName: ''
+        searchName: '',
+        badges: ''
     }
 
     async componentDidMount() {
@@ -40,8 +41,42 @@ class SearchButtons extends Component {
         this.setState({ searchName: '', filteredProducts: this.state.products });
     }
 
+    // removeBadge = () => {
+    //     this.setState({ searchName: '', filteredProducts: this.state.products });
+    // }
+
     removeAllBadges = () => {
-        this.setState({ searchName: '', filteredProducts: this.state.products });
+        this.setState({ searchName: '', badges: '', filteredProducts: this.state.products });
+    }
+
+    applyFilters = (filters) => {
+        
+        var filteredProducts = [...this.state.products];
+        var badges = [...filters.products];
+
+        if(this.state.searchName) {
+            console.log("searchName=",this.state.searchName);
+            filteredProducts = filteredProducts.filter(item => 
+                item.buyer_name === this.state.searchName
+            );
+            console.log("filtered=",filteredProducts);
+            this.setState({filteredProducts, badges});
+        }
+
+        if(filters.products) {
+            let newArray = [];
+            console.log("filters=",filters.products);
+            console.log("products=", this.state.products);
+            filteredProducts.forEach(product => {
+                badges.forEach(badge => {
+                    if(product.product_name === badge) {
+                        newArray.push(product);
+                        return;
+                    }
+                });
+            });
+            this.setState({filteredProducts: newArray, badges});
+        }
     }
 
     render() { 
@@ -52,15 +87,16 @@ class SearchButtons extends Component {
                     <button className="btn btn-white mx-1" style={{border: '2px solid rgb(18, 77, 81)', borderRadius: '0 30px 30px 0', height: '9vh', width: '22vw', color:"rgb(18, 77, 81)", fontSize: '1.4vw'}}>Search Buyer Requirement</button>
                 </div>
 
-                <SearchFilters />
+                <SearchFilters applyFilters={this.applyFilters} />
 
                 <TextBox searchByName={this.searchByName} />
 
-                { this.state.searchName.length<=0 ? null : 
-                    <SearchBadges badge={this.state.searchName} removeNameBadge={this.removeNameBadge} removeAllBadges={this.removeAllBadges} /> }
+                { (this.state.searchName.length<=0 || !this.state.badges) ? null : 
+                    <SearchBadges nameBadge={this.state.searchName} badges={this.state.badges} removeNameBadge={this.removeNameBadge} removeAllBadges={this.removeAllBadges} /> }
 
                 <div className="mx-auto my-4">
                     <div className="row d-flex mx-auto">
+                        {console.log("filtered buyers=", this.state.filteredProducts)}
                         <Buyers products={this.state.filteredProducts} />
                     </div>
                 </div>
