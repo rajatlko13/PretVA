@@ -4,7 +4,7 @@ import ProfilePic from '../images/ProfilePic.png';
 const Buyers = (props) => {
     console.log("Buyers props",props);
     const prod = props.products.map(item => {
-        return <div style={{color:"rgb(18, 77, 81)", border: '2px solid #AFB2C1', borderRadius: '20px', width: '30%', padding: '2vw', margin: '1vw'}}>
+        return <div key={item._id} style={{color:"rgb(18, 77, 81)", border: '2px solid #AFB2C1', borderRadius: '20px', width: '30%', padding: '2vw', margin: '1vw'}}>
                     <div className="row">
                         <img src={ProfilePic} width="70vw" className="col-lg-4" style={{borderRadius: '20px'}} />
                         <p className="col-lg-4"><strong>{item.buyer_name}</strong></p>
