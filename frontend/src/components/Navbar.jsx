@@ -17,10 +17,10 @@ const Navbar = () => {
                 </button>
                 <div className="row collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <NavLink className="nav-link mx-4" aria-current="page" to="/home">Home</NavLink>
-                        <NavLink className="nav-link mx-4" to="/login">Login</NavLink> 
+                        <NavLink className="nav-link mx-4" aria-current="page" to="/about">About</NavLink>
+                        <NavLink className="nav-link mx-4" to="/services">Services</NavLink> 
                         <NavLink className="nav-link mx-4" to="/searchPage">Search</NavLink>
-                        <NavLink className="nav-link mx-4" to="/doctorRegistration">Doctor Registration</NavLink>
+                        <NavLink className="nav-link mx-4" to="/feedback">Feedback & Support</NavLink>
                     </div>
                     <div className="row" style={{ position: 'absolute', right: '0', marginRight: '3vw'}}>
                         {/* <Link to="/login">

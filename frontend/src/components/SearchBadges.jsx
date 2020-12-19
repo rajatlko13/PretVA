@@ -4,8 +4,8 @@ const SearchBadges = (props) => {
     return ( 
         <div>
             <div style={{ backgroundColor: '#AFB2C1' , height: '1px'}}></div>
-                <div className="my-2 d-flex justify-content-start align-content-center">
-                    <p className="my-auto mr-3" style={{color:"rgb(18, 77, 81)"}}>Search Filters : </p>
+                <div className="my-2 d-flex justify-content-start flex-wrap align-content-center">
+                    <p className="my-auto mr-3 py-2" style={{color:"rgb(18, 77, 81)"}}>Search Filters : </p>
                     
                     { props.nameBadge.length===0 ? null : 
                         <span className="badge my-auto mx-1 rounded-pill p-2" style={{backgroundColor: '#AFB2C1', color: "rgb(18, 77, 81)"}}>

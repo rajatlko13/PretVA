@@ -51,12 +51,12 @@ class SearchFilters extends Component {
 
     render() { 
         return ( 
-            <div className="container searchFilters" style={{border: '2px solid #AFB2C1', borderRadius: '8px', width: '80%'}}>
+            <div className="container searchFilters" style={{border: '2px solid #AFB2C1', borderRadius: '8px'}}>
                 <div className="mx-3 my-3" >
-                    <p style={{color:"rgb(18, 77, 81)", fontSize: '1.5em', fontWeight: 'bolder'}}>
+                    <p style={{color:"rgb(18, 77, 81)", fontWeight: 'bolder'}}>
                         <strong>Search Filters</strong>
                     </p>
-                    <div className="d-flex justify-content-between" style={{fontSize: '1.1em'}}>
+                    <div className="d-flex justify-content-between">
                         <div className="dropdown mx-2">
                             <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Product

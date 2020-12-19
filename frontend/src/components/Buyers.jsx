@@ -4,7 +4,7 @@ import ProfilePic from '../images/ProfilePic.png';
 const Buyers = (props) => {
     console.log("Buyers props",props);
     const prod = props.products.map(item => {
-        return <div key={item._id} style={{color:"rgb(18, 77, 81)", border: '2px solid #AFB2C1', borderRadius: '20px', width: '30%', padding: '2vw', margin: '1vw'}}>
+        return <div key={item._id} id="buyersCard" style={{color:"rgb(18, 77, 81)", border: '2px solid #AFB2C1', borderRadius: '20px', padding: '2vw', margin: '1vw'}}>
                     <div className="row">
                         <img src={ProfilePic} width="70vw" className="col-lg-4" style={{borderRadius: '20px'}} />
                         <p className="col-lg-4"><strong>{item.buyer_name}</strong></p>
@@ -19,6 +19,12 @@ const Buyers = (props) => {
                         <p><strong>Cost Bracket : </strong>INR {item.price_rs}/mtr</p>
                         <p><strong>Lead Time Provision : </strong>{item.lead_time} { item.lead_time<=1 ? "month" : "months" }</p>
                         <p><strong>Delivery Location : </strong>---</p>
+                    </div>
+                    <div className="d-flex justify-content-between py-2">
+                        <i class="far fa-user" style={{cursor: 'pointer'}}></i>
+                        <i class="far fa-comment-alt" style={{cursor: 'pointer'}}></i>
+                        <i class="fas fa-share-alt" style={{cursor: 'pointer'}}></i>
+                        <i class="far fa-bookmark" style={{cursor: 'pointer'}}></i>
                     </div>
                 </div>
     });

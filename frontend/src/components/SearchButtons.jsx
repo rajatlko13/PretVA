@@ -120,10 +120,11 @@ class SearchButtons extends Component {
     render() { 
         return ( 
             <div className="container">
-                <div className="d-flex justify-content-center my-5">
-                    <button className="btn btn-white mx-1" style={{border: '2px solid rgb(18, 77, 81)', borderRadius: '30px 0 0 30px', height: '9vh', width: '16vw', color:"rgb(18, 77, 81)", fontSize: '1.1vw'}}>Search Supplier Product</button>
-                    <button className="btn btn-white mx-1" style={{border: '2px solid rgb(18, 77, 81)', borderRadius: '0 30px 30px 0', height: '9vh', width: '16vw', color:"rgb(18, 77, 81)", fontSize: '1.1vw'}}>Search Buyer Requirement</button>
+                <div className="d-flex justify-content-center my-5 searchButtons">
+                    <button className="btn btn-white mx-1 p-3" style={{border: '2px solid rgb(18, 77, 81)', borderRadius: '30px 0 0 30px', color:"rgb(18, 77, 81)"}}>Search Supplier Product</button>
+                    <button className="btn btn-white mx-1 p-3 active" style={{border: '2px solid rgb(18, 77, 81)', borderRadius: '0 30px 30px 0', color:"rgb(18, 77, 81)"}}>Search Buyer Requirement</button>
                 </div>
+                {/* height: '9vh', width: '16vw', */}
 
                 <SearchFilters applyFilters={this.applyFilters} />
 
