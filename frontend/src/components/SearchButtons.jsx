@@ -22,7 +22,7 @@ class SearchButtons extends Component {
 
     async componentDidMount() {
         try {
-            const products = await axios.get(`https://pretva-backend.herokuapp.com/api/products`);
+            const products = await axios.get(`${process.env.REACT_APP_BASE_API}/products`);
             this.setState({products: products.data, filteredProducts: products.data});
         } catch (error) {
             console.log(error);
