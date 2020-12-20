@@ -93,23 +93,11 @@ class SearchFilters extends Component {
                             <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Cost
                             </a>
-
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <a className="dropdown-item" href="#">Something else here</a>
-                            </div>
                         </div>
                         <div className="dropdown mx-2">
                             <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Lead Time
                             </a>
-
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <a className="dropdown-item" href="#">Something else here</a>
-                            </div>
                         </div>
                         <div className="dropdown mx-2">
                             <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
