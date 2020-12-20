@@ -18,16 +18,19 @@ class SearchButtons extends Component {
             quantity: '',
             cost: '',
             leadTime: ''
-        }
+        },
+        loading: false
     }
 
     async componentDidMount() {
+        this.setState({ loading: true });
         try {
             const products = await axios.get(`${process.env.REACT_APP_BASE_API}/products`);
             this.setState({products: products.data, filteredProducts: products.data});
         } catch (error) {
             console.log(error);
         }
+        this.setState({ loading: false });
     }
 
     searchByName = async (name) => {
@@ -127,9 +130,16 @@ class SearchButtons extends Component {
                     <SearchBadges nameBadge={this.state.searchName} badges={this.state.badges} removeNameBadge={this.removeNameBadge} removeBadge={this.removeBadge} removeAllBadges={this.removeAllBadges} /> }
 
                 <div className="mx-auto my-4">
-                    <div className="row d-flex mx-auto">
-                        <Buyers products={this.state.filteredProducts} />
-                    </div>
+                        { this.state.loading ? 
+                            <div class="d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div> :
+                            <div className="row d-flex mx-auto">
+                                <Buyers products={this.state.filteredProducts} />
+                            </div>
+                        }
                 </div>
                 <Footer />
             </div>
