@@ -5,8 +5,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFoundPage from './pages/NotFoundPage';
 import Navbar from './components/Navbar';
-import ProtectedRoute from './utilities/ProtectedRoute';
 import SearchPage from './pages/SearchPage';
+import Footer from './components/Footer';
 
 function App(props) {
   return (
@@ -19,6 +19,7 @@ function App(props) {
         <Route path="/" component={Home} />
         <Redirect to='/:path' />
       </Switch>
+      <Footer />
     </React.Fragment>
     // <div className="App">
     //   <header className="App-header">

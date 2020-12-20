@@ -18,14 +18,14 @@
 
 @media screen and (max-width: 1000px) {
 
-    .searchFilters {
+    /* .searchFilters {
         overflow-x: auto;
         overflow-y: hidden;
-    }
+    } */
 
-    .applyFilters {
+    /* .applyFilters {
         font-size: 0.8em;
-    }
+    } */
 
     /* #textBoxForm {
         width: 60vw;
@@ -63,9 +63,9 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .applyFilters {
         font-size: 0.8em;
         padding-right: 2vw;
     }
-}
+} */

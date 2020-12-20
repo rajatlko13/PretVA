@@ -30,7 +30,6 @@ class SearchButtons extends Component {
     }
 
     searchByName = async (name) => {
-        console.log("name=",name);
         await this.setState({searchName: name});
         this.applyFilters(this.state.badges);
     }
@@ -73,26 +72,20 @@ class SearchButtons extends Component {
         var filteredProducts = [...this.state.products];
         var badges = {...filters};
         this.setState({filteredProducts, badges});
-        console.log("badges=",badges);
-        console.log("element=",typeof filteredProducts[0].buyer_name);
 
         if(this.state.searchName) {
-            console.log("searchName=",this.state.searchName);
             filteredProducts = filteredProducts.filter(item => {
                 if(item.buyer_name) {                      // to remove any null buyer
                     if(item.buyer_name.toLowerCase() === this.state.searchName.toLowerCase())
                         return item;
                 }
             });
-            console.log("filtered=",filteredProducts);
             this.setState({filteredProducts});
         }
 
         
-        console.log("filters=",filters);
         if(filters.products.length>0) {
             let newArray = [];
-            console.log("products=", this.state.products);
             filteredProducts.forEach(product => {
                 badges.products.forEach(badge => {
                     if(product.product_name === badge) {
@@ -106,7 +99,6 @@ class SearchButtons extends Component {
         }
 
         if(filters.quantity) {
-            console.log("quantity=",filters.quantity);
             let newArray = [];
             newArray = filteredProducts.filter(product => 
                 product.quantity >= filters.quantity
@@ -135,7 +127,6 @@ class SearchButtons extends Component {
 
                 <div className="mx-auto my-4">
                     <div className="row d-flex mx-auto">
-                        {console.log("filtered buyers=", this.state.filteredProducts)}
                         <Buyers products={this.state.filteredProducts} />
                     </div>
                 </div>

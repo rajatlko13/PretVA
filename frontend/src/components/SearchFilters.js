@@ -56,7 +56,7 @@ class SearchFilters extends Component {
                     <p style={{color:"rgb(18, 77, 81)", fontWeight: 'bolder'}}>
                         <strong>Search Filters</strong>
                     </p>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between flex-wrap">
                         <div className="dropdown mx-2">
                             <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Product
@@ -90,7 +90,7 @@ class SearchFilters extends Component {
                             </div>
                         </div>
                         <div className="dropdown mx-2">
-                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)"}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Cost
                             </a>
 
@@ -101,7 +101,7 @@ class SearchFilters extends Component {
                             </div>
                         </div>
                         <div className="dropdown mx-2">
-                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)"}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Lead Time
                             </a>
 
@@ -112,26 +112,14 @@ class SearchFilters extends Component {
                             </div>
                         </div>
                         <div className="dropdown mx-2">
-                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)"}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Rating
                             </a>
-
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <a className="dropdown-item" href="#">Something else here</a>
-                            </div>
                         </div>
                         <div className="dropdown mx-2">
-                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)"}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="dropdown-toggle" style={{color:"rgb(18, 77, 81)", textDecoration: 'none'}} role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Location
                             </a>
-
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <a className="dropdown-item" href="#">Something else here</a>
-                            </div>
                         </div>
                         <div className="mx-2 applyFilters">
                             <button onClick={() => this.props.applyFilters(this.state.badges)} className="rounded-pill px-3" style={{border: "2px solid rgb(18, 77, 81)", backgroundColor: 'white'}}>Apply Filters</button>
