@@ -4,6 +4,7 @@ import Buyers from '../components/Buyers';
 import SearchFilters from '../components/SearchFilters';
 import TextBox from '../components/TextBox';
 import SearchBadges from './SearchBadges';
+import Footer from '../components/Footer';
 import '../css/myStyle.css';
 
 class SearchButtons extends Component {
@@ -130,6 +131,7 @@ class SearchButtons extends Component {
                         <Buyers products={this.state.filteredProducts} />
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }

@@ -19,7 +19,6 @@ function App(props) {
         <Route path="/" component={Home} />
         <Redirect to='/:path' />
       </Switch>
-      <Footer />
     </React.Fragment>
     // <div className="App">
     //   <header className="App-header">

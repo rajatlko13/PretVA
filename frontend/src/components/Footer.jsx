@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return ( 
-        <div>
+        <div style={{position: 'absolute', left: '0', right: '0'}}>
             <div className="d-flex justify-content-center flex-wrap text-white py-4" style={{backgroundColor: "rgb(18, 77, 81)"}}>
                 <div className="mx-3">Get in touch</div>
                 <div className="mx-3 d-flex flex-column">
